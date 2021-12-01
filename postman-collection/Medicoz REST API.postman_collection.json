@@ -1,0 +1,1814 @@
+{
+	"info": {
+		"_postman_id": "b59237a7-b99e-401e-b0c6-39203c202949",
+		"name": "Patient REST API",
+		"description": "Medicoz REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Praveen",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Kumar",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "20",
+									"type": "number"
+								},
+								{
+									"key": "mobileNumber",
+									"value": "9881109420",
+									"type": "text"
+								},
+								{
+									"key": "genderCd",
+									"value": "M",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register?=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "mobileNumber",
+									"value": "9881109420",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "20",
+									"type": "number"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserProfile",
+			"item": [
+				{
+					"name": "UserProfile Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "Praveen",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Kumar",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "20",
+									"type": "number"
+								},
+								{
+									"key": "mobileNumber",
+									"value": "9881109420",
+									"type": "text"
+								},
+								{
+									"key": "genderCd",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "a@a.com",
+									"type": "text"
+								},
+								{
+									"key": "profilePhoto",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "relationshipCd",
+									"value": "C",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserProfile List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userprofile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserProfile Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile/5d43d14a246036209713e667",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userprofile",
+								"5d43d14a246036209713e667"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserProfile Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "Praveen",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "Kumar",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "20",
+									"type": "number"
+								},
+								{
+									"key": "mobileNumber",
+									"value": "9881109420",
+									"type": "text"
+								},
+								{
+									"key": "genderCd",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "a@a.com",
+									"type": "text"
+								},
+								{
+									"key": "profilePhoto",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "relationshipCd",
+									"value": "C",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile/5d43d753cdbdd1264291806c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userprofile",
+								"5d43d753cdbdd1264291806c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UserProfile Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile/5d43d753cdbdd1264291806c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"userprofile",
+								"5d43d753cdbdd1264291806c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HealthRecord",
+			"item": [
+				{
+					"name": "HealthRecord Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "height",
+									"value": "170",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "70",
+									"type": "text"
+								},
+								{
+									"key": "bloodGroup",
+									"value": "A+",
+									"type": "text"
+								},
+								{
+									"key": "genderCd",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/healthRecord",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthRecord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthRecord List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/healthRecord",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthRecord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthRecord Detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/userprofile/616d01563d779030a4450fcd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthrecord",
+								"616d01563d779030a4450fcd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthRecord Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "height",
+									"value": "170",
+									"type": "text"
+								},
+								{
+									"key": "weight",
+									"value": "70",
+									"type": "text"
+								},
+								{
+									"key": "bloodGroup",
+									"value": "A+",
+									"type": "text"
+								},
+								{
+									"key": "genderCd",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "25",
+									"type": "Number"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/healthrecord/616d01563d779030a4450fcd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthrecord",
+								"616d01563d779030a4450fcd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HealthRecord Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/healthrecord/616d3c64a602900c60e1a263",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"healthrecord",
+								"616d3c64a602900c60e1a263"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CurrentMedication",
+			"description": "",
+			"item": [
+				{
+					"name": "CurrentMedication List",
+					"request": {
+						"url": "http://localhost:3000/api/currentmedication",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CurrentMedication Detail",
+					"request": {
+						"url": "http://localhost:3000/api/currentmedication/5d43d14a246036209713e667",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CurrentMedication Update",
+					"request": {
+						"url": "http://localhost:3000/api/currentmedication/616fabd622d8280c8c3a51e3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDcwNjQ4MSwiZXhwIjoxNjM0NzEzNjgxfQ.3osXYH9epEeMfUIISuvk1VKEglaj5t6ZAmhuUzlG9pk",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \n        \"medication\": {\n            \"morning\": [\n                {\n                    \"_id\": \"616fabd622d8280c8c3a51e5\",\n                    \"name\": \"cccdddaaa\",\n                    \"type\": \"aaa\",\n                    \"noOfTime\": \"aaa\",\n                    \"qty\": \"aaa\",\n                    \"since\": \"aaa\",\n                    \"days\": \"aaa\"\n                },\n                {\n                    \"_id\": \"616fabd622d8280c8c3a51e4\",\n                    \"name\": \"bbb\",\n                    \"type\": \"bb\",\n                    \"noOfTime\": \"bb\",\n                    \"qty\": \"bb\",\n                    \"since\": \"bbb\",\n                    \"days\": \"bbb\"\n                }\n            ],\n            \"afternoon\": [\n                {\n                    \"_id\": \"616fabd622d8280c8c3a51e6\",\n                    \"name\": \"aaa\",\n                    \"type\": \"aaa\",\n                    \"noOfTime\": \"aaa\",\n                    \"qty\": \"aaa\",\n                    \"since\": \"aaa\",\n                    \"days\": \"aaa\"\n                }\n            ],\n            \"night\": [\n                {\n                    \"_id\": \"616fabd622d8280c8c3a51e7\",\n                    \"name\": \"vvvvvv\",\n                    \"type\": \"vv\",\n                    \"noOfTime\": \"yyy\",\n                    \"qty\": \"aaa\",\n                    \"since\": \"aaa\",\n                    \"days\": \"aaa\"\n                }\n            ]\n        }\n    \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CurrentMedication Delete",
+					"request": {
+						"url": "http://localhost:3000/api/currentmedication/5d43d753cdbdd1264291806c",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CurrentMedication Save",
+					"request": {
+						"url": "http://localhost:3000/api/currentmedication",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDcwNjQ4MSwiZXhwIjoxNjM0NzEzNjgxfQ.3osXYH9epEeMfUIISuvk1VKEglaj5t6ZAmhuUzlG9pk",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"morning\": [{\r\n\t\t\t\"name\": \"ccc\",\r\n\t\t\t\"type\": \"aaa\",\r\n\t\t\t\"noOfTime\": \"aaa\",\r\n\t\t\t\"qty\": \"aaa\",\r\n\t\t\t\"since\": \"aaa\",\r\n\t\t\t\"days\": \"aaa\"\r\n\r\n\t\t},\r\n\t\t{\r\n\t\t\t\"name\": \"bbb\",\r\n\t\t\t\"type\": \"bb\",\r\n\t\t\t\"noOfTime\": \"bb\",\r\n\t\t\t\"qty\": \"bb\",\r\n\t\t\t\"since\": \"bbb\",\r\n\t\t\t\"days\": \"bbb\"\r\n\t\t}\r\n\t],\r\n\t\"afternoon\": [{\r\n\t\t\t\"name\": \"aaa\",\r\n\t\t\t\"type\": \"aaa\",\r\n\t\t\t\"noOfTime\": \"aaa\",\r\n\t\t\t\"qty\": \"aaa\",\r\n\t\t\t\"since\": \"aaa\",\r\n\t\t\t\"days\": \"aaa\"\r\n\r\n\t\t}\r\n\r\n\t],\r\n\t\"night\": [{\r\n\t\t\"name\": \"vvvvvv\",\r\n\t\t\"type\": \"vv\",\r\n\t\t\"noOfTime\": \"yyy\",\r\n\t\t\"qty\": \"aaa\",\r\n\t\t\"since\": \"aaa\",\r\n\t\t\"days\": \"aaa\"\r\n\r\n\t}]\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescription",
+			"item": [
+				{
+					"name": "Prescription Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "prescriptionDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "recordName",
+									"value": "Fci",
+									"type": "text"
+								},
+								{
+									"key": "recordPrescribedByDr",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNotes",
+									"value": "notes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/prescription",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prescription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prescription List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/prescription",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prescription"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prescription Detail",
+					"request": {
+						"url": "http://localhost:3000/api/prescription/5d43d14a246036209713e667",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Prescription Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "prescriptionDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "recordName",
+									"value": "Fci1",
+									"type": "text"
+								},
+								{
+									"key": "recordPrescribedByDr",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNotes",
+									"value": "someting about patient",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/prescription/61712aa570c8e50d10837e52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prescription",
+								"61712aa570c8e50d10837e52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prescription Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/prescription/617131fd63e1603328416084",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"prescription",
+								"617131fd63e1603328416084"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TestReport",
+			"item": [
+				{
+					"name": "TestReport Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "testName",
+									"value": "fci",
+									"type": "text"
+								},
+								{
+									"key": "recordDoctor",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNote",
+									"value": "notes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/testreport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"testreport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestReport List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/testreport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"testreport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestReport Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/testReport/617657f8f56fa33f34149856",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"testreport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestReport Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "document",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "testName",
+									"value": "Fci",
+									"type": "text"
+								},
+								{
+									"key": "recordDoctor",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNote",
+									"value": "notes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/testreport/61712aa570c8e50d10837e52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"testreport",
+								"61712aa570c8e50d10837e52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TestReport Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/testreport/617131fd63e1603328416084",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"testreport",
+								"617131fd63e1603328416084"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "HospitalRecord",
+			"item": [
+				{
+					"name": "HospitalRecord Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hospitalDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "hospitalRecord",
+									"value": "Fci",
+									"type": "text"
+								},
+								{
+									"key": "doctorName",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNote",
+									"value": "notes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hospitalrecord",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hospitalrecord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HosptalRecord List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/hospitalrecord",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hospitalrecord"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HospitalRecord Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/hospitalrecord/617657f8f56fa33f34149856",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hospitalrecord",
+								"61a2086fea0d9c2c18b585f8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HospitalRecord Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "hospitalDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "recordDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "hospitalRecord",
+									"value": "Fci",
+									"type": "text"
+								},
+								{
+									"key": "doctorName",
+									"value": "Dr.Hari",
+									"type": "text"
+								},
+								{
+									"key": "additionalNote",
+									"value": "notes",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/hospitalrecord/61712aa570c8e50d10837e52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hospitalrecord",
+								"61712aa570c8e50d10837e52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HospitalRecord Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/hospitalrecord/617131fd63e1603328416084",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hospitalrecord",
+								"617131fd63e1603328416084"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "InsuranceDetails",
+			"item": [
+				{
+					"name": "InsuranceDetails Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "insuranceImage",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "insuranceType",
+									"value": "Life Insurance",
+									"type": "text"
+								},
+								{
+									"key": "insuranceCo_Name",
+									"value": "JeevanBima",
+									"type": "text"
+								},
+								{
+									"key": "policyNumber",
+									"value": "pn-123",
+									"type": "text"
+								},
+								{
+									"key": "policy_StartDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "policy_EndDate",
+									"value": "2020-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "premium_Amount",
+									"value": "1000rs",
+									"type": "text"
+								},
+								{
+									"key": "premiumPayableBasis",
+									"value": "10rs",
+									"type": "text"
+								},
+								{
+									"key": "policyCoverageAmount",
+									"value": "100rs",
+									"type": "text"
+								},
+								{
+									"key": "members_Covered",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "coveredMemberName",
+									"value": "rahul",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/insurancedetail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"insurancedetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InsuranceDetails Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "insuranceImage",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "insuranceType",
+									"value": "Life Insurance",
+									"type": "text"
+								},
+								{
+									"key": "insuranceCo_Name",
+									"value": "JeevanBima",
+									"type": "text"
+								},
+								{
+									"key": "policyNumber",
+									"value": "pn-123",
+									"type": "text"
+								},
+								{
+									"key": "policy_StartDate",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "policy_EndDate",
+									"value": "2020-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "premium_Amount",
+									"value": "1000rs",
+									"type": "text"
+								},
+								{
+									"key": "premiumPayableBasis",
+									"value": "10rs",
+									"type": "text"
+								},
+								{
+									"key": "policyCoverageAmount",
+									"value": "100rs",
+									"type": "text"
+								},
+								{
+									"key": "members_Covered",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "coveredMemberName",
+									"value": "rahul",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/insurancedetail/61712aa570c8e50d10837e52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"insurancedetail",
+								"61712aa570c8e50d10837e52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InsuranceDetails List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/insurancedetail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"insurancedetail"
+							
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InsuranceDetails Details",
+						"request": {
+							"method": "GET",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+									"type": "text"
+								}
+							],
+							"url": {
+								"raw": "http://localhost:3000/api/insurancedetail/617657f8f56fa33f34149856",
+								"protocol": "http",
+								"host": [
+									"localhost"
+								],
+								"port": "3000",
+								"path": [
+									"api",
+									"insurancedetail",
+									"6182491e26469f26941d9f64"
+								]
+							}
+						},
+						"response": []
+					},
+					{
+						"name": "InsuranceDetail Delete",
+						"request": {
+							"method": "DELETE",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+									"type": "text"
+								}
+							],
+							"url": {
+								"raw": "http://localhost:3000/api/insurancedetail/617131fd63e1603328416084",
+								"protocol": "http",
+								"host": [
+									"localhost"
+								],
+								"port": "3000",
+								"path": [
+									"api",
+									"insurancedetail",
+									"617131fd63e1603328416084"
+								]
+							}
+						},
+						"response": []
+					}
+				
+			]
+		},
+		{
+			"name": "VaccineDetails",
+			"item": [
+				{
+					"name": "VaccineDetails Save",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzI1NTMxLCJleHAiOjE1NjQ3MzI3MzF9.YEGMugzT_ijNgAeBYe4O6hZoidkG_hX9x-1QjQKuJYI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vaccineDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "vaccineName",
+									"value": "covidShield",
+									"type": "text"
+								},
+								{
+									"key": "doseNumber",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "place",
+									"value": "Ranchi",
+									"type": "text"
+								},
+								{
+									"key": "beneficiaryId",
+									"value": "585",
+									"type": "text"
+								},
+								{
+									"key": "nextDueDate",
+									"value": "2020-08-15",
+									"type": "Date"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vaccinedetail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccinedetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VaccineDetails Update",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTZiYTk5Njc3Yjk4NjJmNjhhNGNmZGIiLCJmaXJzdE5hbWUiOiJQcmF2ZWVuIiwibGFzdE5hbWUiOiJLdW1hciIsImlhdCI6MTYzNDQ0NjQzMiwiZXhwIjoxNjM0NDUzNjMyfQ.mai8zc67a7yW7rgI6lLRMBtvDUFQGvwIxO1UMZtEGSI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/form-data",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "vaccineDocument",
+									"value": "aaa.png",
+									"type": "file"
+								},
+								{
+									"key": "vaccineName",
+									"value": "covidShield",
+									"type": "text"
+								},
+								{
+									"key": "doseNumber",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "1996-08-15",
+									"type": "Date"
+								},
+								{
+									"key": "place",
+									"value": "Ranchi",
+									"type": "text"
+								},
+								{
+									"key": "beneficiaryId",
+									"value": "585",
+									"type": "text"
+								},
+								{
+									"key": "nextDueDate",
+									"value": "2020-08-15",
+									"type": "Date"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vaccinedetail/61712aa570c8e50d10837e52",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vaccinedetail",
+								"61712aa570c8e50d10837e52"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VaccineDetails Details",
+						"request": {
+							"method": "GET",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+									"type": "text"
+								}
+							],
+							"url": {
+								"raw": "http://localhost:3000/api/vaccinedetail/617657f8f56fa33f34149856",
+								"protocol": "http",
+								"host": [
+									"localhost"
+								],
+								"port": "3000",
+								"path": [
+									"api",
+									"vaccinedetail",
+									"6182491e26469f26941d9f64"
+								]
+							}
+						},
+						"response": []
+					},
+					{
+						"name": "VaccineDetails List",
+						"request": {
+							"method": "GET",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY0NzQ0NzQ4LCJleHAiOjE1NjQ3NTE5NDh9.gE2DjhWgNmPFyy7K21MEC4bIm3gbbDicdE_eorFIZ0o",
+									"type": "text"
+								}
+							],
+							"url": {
+								"raw": "http://localhost:3000/api/vaccinedetail",
+								"protocol": "http",
+								"host": [
+									"localhost"
+								],
+								"port": "3000",
+								"path": [
+									"api",
+									"vaccinedetail"
+								
+								]
+							}
+						},
+						"response": []
+					},
+					{
+						"name": "VaccineDetails Delete",
+						"request": {
+							"method": "DELETE",
+							"header": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZDQwMzc0ODllY2I2ZDUyNjAzZDQ1ZjMiLCJmaXJzdE5hbWUiOiJ0ZXN0IiwibGFzdE5hbWUiOiJ0ZXN0aW5nIiwiZW1haWwiOiJ0ZXN0QHRlc3RpbmcuY29tIiwiaWF0IjoxNTY1MDAxNzQ3LCJleHAiOjE1NjUwMDg5NDd9.NFq5JjFI4nEU7_1oAt2Zj91q0vRSdd3d5to-T_7aRJ4",
+									"type": "text"
+								}
+							],
+							"url": {
+								"raw": "http://localhost:3000/api/vaccinedetail/617131fd63e1603328416084",
+								"protocol": "http",
+								"host": [
+									"localhost"
+								],
+								"port": "3000",
+								"path": [
+									"api",
+									"vaccinedetail",
+									"617131fd63e1603328416084"
+								]
+							}
+						},
+						"response": []
+					}
+			]
+		}
+		
+	]
+}
