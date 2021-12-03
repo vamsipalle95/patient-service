@@ -9,14 +9,14 @@ import { prescriptionStore, prescriptionList, prescriptionDetails, prescriptionU
 
 var router = express.Router();
 
-router.post("/", imageFile.array('prescriptionDocument', 10), prescriptionStore);
+router.post("/", imageFile.array("prescriptionDocument", 10), prescriptionStore);
 router.get("/", prescriptionList);
 router.get("/:id", prescriptionDetails);
-router.put("/:id", imageFile.array('prescriptionDocument', 10), prescriptionUpdate);
+router.put("/:id", imageFile.array("prescriptionDocument", 10), prescriptionUpdate);
 router.delete("/:id", prescriptionDelete);
 
 
-export default router
+export default router;
 
 
 

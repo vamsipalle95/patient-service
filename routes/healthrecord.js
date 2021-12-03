@@ -1,6 +1,6 @@
 import express from "express";
 import { healthRecordStore, healthRecordList,healthRecordDetail
-    ,healthRecordUpdate,healthRecordDelete} from "../controllers/HealthRecordController.js";
+	,healthRecordUpdate,healthRecordDelete} from "../controllers/HealthRecordController.js";
 
 var router = express.Router();
 
@@ -11,4 +11,4 @@ router.put("/:id", healthRecordUpdate);
 router.delete("/:id", healthRecordDelete);
 
 
-export default router
+export default router;

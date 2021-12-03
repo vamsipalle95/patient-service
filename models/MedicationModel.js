@@ -26,14 +26,14 @@ var MedicationSchema = new Schema(
 				days: { type: String, required: false }
 
 			}],
-		"night":[{
+			"night":[{
 			    name: { type: String, required: false },
 				type: { type: String, required: false },
 				noOfTime: { type: String, required: false },
 				qty: { type: String, required: false },
 				since: { type: String, required: false },
 				days: { type: String, required: false }
-		}]
+			}]
 
 		}
 	}, { timestamps: true });

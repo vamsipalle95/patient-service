@@ -11,5 +11,5 @@ router.put("/:id", currentMedicationUpdate);
 router.delete("/:id", currentMedicationDelete);
 
 
-export default router
+export default router;
 

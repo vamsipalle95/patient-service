@@ -5,9 +5,9 @@ import { sanitizeBody } from"express-validator";
 import auth from "../middlewares/jwt.js";
 import {check} from "express-validator";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
-import { createRequire } from 'module';
+import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-require('dotenv').config()
+require("dotenv").config();
 
 var mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
@@ -106,39 +106,39 @@ const userProfileStore = [
 		.isNumeric().withMessage("Age should be numeric."),
 	body("genderCd").isLength({ min:1,max:20 }).trim().withMessage("genderCd must be specified.")
 		.isAlphanumeric().withMessage("genderCd should be isAlphanumeric."),
-	check('mobileNumber').optional({ checkFalsy: true,optional: true,nullable : true }).isInt().isLength({min:10}).trim().withMessage('Please enter valid mobile no.')
-	.isNumeric().withMessage("mobileNumber should be numeric."),
-	check('email').optional({ checkFalsy: true, nullable: true }).isEmail().trim().withMessage('Please enter valid email')
-	.custom((value, { req }) => {
-		return UserProfile.findOne({ email: value}).then(userProfile => {
-			if (userProfile) {
-				return Promise.reject("This Email has already exits please try to different Email");
-			}
-		});
-	}),
+	check("mobileNumber").optional({ checkFalsy: true,optional: true,nullable : true }).isInt().isLength({min:10}).trim().withMessage("Please enter valid mobile no.")
+		.isNumeric().withMessage("mobileNumber should be numeric."),
+	check("email").optional({ checkFalsy: true, nullable: true }).isEmail().trim().withMessage("Please enter valid email")
+		.custom((value, { req }) => {
+			return UserProfile.findOne({ email: value}).then(userProfile => {
+				if (userProfile) {
+					return Promise.reject("This Email has already exits please try to different Email");
+				}
+			});
+		}),
 	body("profilePhoto"),
 	body("relationshipCd").isLength({min:1}).trim().withMessage("RelationshipCd must required")
-	.isAlphanumeric().withMessage("relationshipCd should be isAlphanumeric."),
+		.isAlphanumeric().withMessage("relationshipCd should be isAlphanumeric."),
 	
-		sanitizeBody("firstName").escape(),
-		sanitizeBody("lastName").escape(),
-		sanitizeBody("age").escape(),
-		sanitizeBody("genderCd").escape(),
-		sanitizeBody("mobileNumber").escape(),
-		sanitizeBody("email").escape(),
-		sanitizeBody("profilePhoto").escape(),
-		sanitizeBody("*").escape(),
+	sanitizeBody("firstName").escape(),
+	sanitizeBody("lastName").escape(),
+	sanitizeBody("age").escape(),
+	sanitizeBody("genderCd").escape(),
+	sanitizeBody("mobileNumber").escape(),
+	sanitizeBody("email").escape(),
+	sanitizeBody("profilePhoto").escape(),
+	sanitizeBody("*").escape(),
 	(req, res) => {
 		try {
 
 
-			let imageArray = []
-            if (req.files) {
-                req.files.map(file => {
-                    imageArray.push(file.path)
-                })
-				console.log(imageArray)
-            }
+			let imageArray = [];
+			if (req.files) {
+				req.files.map(file => {
+					imageArray.push(file.path);
+				});
+				console.log(imageArray);
+			}
 
 
 			const errors = validationResult(req);
@@ -164,7 +164,7 @@ const userProfileStore = [
 				userProfile.save(function (err) {
 					if (err) { return ErrorResponse(res, err); }
 					let userProfileData = new UserProfileData(userProfile);
-					console.log(userProfileData)
+					console.log(userProfileData);
 					return successResponseWithData(res, "UserProfile add Success.", userProfileData);
 				});
 			}
@@ -188,19 +188,19 @@ const userProfileStore = [
 const userProfileUpdate = [
 	auth,
 	body("firstName").isLength({ min: 1 }).trim().withMessage("First name must be specified.")
-	.isAlphanumeric().withMessage("First name has non-alphanumeric characters."),
-body("lastName").isLength({ min: 1 }).trim().withMessage("Last name must be specified.")
-	.isAlphanumeric().withMessage("Last name has non-alphanumeric characters."),
-body("age").isLength({ min: 1 }).trim().withMessage("Age must be specified.")
-	.isNumeric().withMessage("Age should be numeric."),
-body("genderCd").isLength({ min:1,max:20 }).trim().withMessage("genderCd must be specified.")
-	.isAlphanumeric().withMessage("genderCd should be isAlphanumeric."),
-check('mobileNumber').optional({ checkFalsy: true,optional: true,nullable : true }).isInt().isLength({min:10}).trim().withMessage('Please enter valid mobile no.')
-.isNumeric().withMessage("Age should be numeric."),
-check('email').optional({ checkFalsy: true, nullable: true }).isEmail().trim().withMessage('Please enter valid email'),
-body("profilePhoto"),
-body("relationshipCd").isLength({min:1}).trim().withMessage("RelationshipCd must required")
-.isAlphanumeric().withMessage("relationshipCd should be isAlphanumeric."),
+		.isAlphanumeric().withMessage("First name has non-alphanumeric characters."),
+	body("lastName").isLength({ min: 1 }).trim().withMessage("Last name must be specified.")
+		.isAlphanumeric().withMessage("Last name has non-alphanumeric characters."),
+	body("age").isLength({ min: 1 }).trim().withMessage("Age must be specified.")
+		.isNumeric().withMessage("Age should be numeric."),
+	body("genderCd").isLength({ min:1,max:20 }).trim().withMessage("genderCd must be specified.")
+		.isAlphanumeric().withMessage("genderCd should be isAlphanumeric."),
+	check("mobileNumber").optional({ checkFalsy: true,optional: true,nullable : true }).isInt().isLength({min:10}).trim().withMessage("Please enter valid mobile no.")
+		.isNumeric().withMessage("Age should be numeric."),
+	check("email").optional({ checkFalsy: true, nullable: true }).isEmail().trim().withMessage("Please enter valid email"),
+	body("profilePhoto"),
+	body("relationshipCd").isLength({min:1}).trim().withMessage("RelationshipCd must required")
+		.isAlphanumeric().withMessage("relationshipCd should be isAlphanumeric."),
 
 	sanitizeBody("firstName").escape(),
 	sanitizeBody("lastName").escape(),
@@ -215,12 +215,12 @@ body("relationshipCd").isLength({min:1}).trim().withMessage("RelationshipCd must
 
 
 
-		let imageArray = []
+		let imageArray = [];
 		if (req.files) {
 			req.files.map(file => {
-				imageArray.push(file.path)
-			})
-			console.log(imageArray)
+				imageArray.push(file.path);
+			});
+			console.log(imageArray);
 		}
 
 
@@ -272,7 +272,7 @@ body("relationshipCd").isLength({min:1}).trim().withMessage("RelationshipCd must
 				}
 			}
 		} catch (err) {
-			console.log(err.message) 
+			console.log(err.message); 
 			return ErrorResponse(res, err);
 		}
 	}
@@ -320,4 +320,4 @@ const userProfileDelete = [
 ];
 
 
-export {userProfileList ,userProfileDetail ,userProfileStore, userProfileUpdate,userProfileDelete}
+export {userProfileList ,userProfileDetail ,userProfileStore, userProfileUpdate,userProfileDelete};

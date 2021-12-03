@@ -7,10 +7,10 @@ import {testReortStore,testReportList,testReportDetails,testReportUpdate,deleteT
 
 var router = express.Router();
 
-router.post("/", imageFile.array('document', 10), testReortStore);
+router.post("/", imageFile.array("document", 10), testReortStore);
 router.get("/", testReportList);
 router.get("/:id", testReportDetails);
-router.put("/:id", imageFile.array('document', 10), testReportUpdate);
+router.put("/:id", imageFile.array("document", 10), testReportUpdate);
 router.delete("/:id", deleteTestReport);
 
-export default router
+export default router;

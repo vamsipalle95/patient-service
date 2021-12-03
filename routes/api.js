@@ -24,4 +24,4 @@ app.use("/hospitalrecord",hospitaRecordslRouter);
 app.use("/insurancedetail",insuranceDetailsRouter);
 app.use("/vaccinedetail",vaccineDetailRouter);
 
-export default app
+export default app;

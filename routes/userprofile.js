@@ -6,8 +6,8 @@ var router = express.Router();
 
 router.get("/", userProfileList);
 router.get("/:id", userProfileDetail);
-router.post("/", imageFile.array('profilePhoto',1), userProfileStore);
-router.put("/:id",imageFile.array('profilePhoto',1), userProfileUpdate);
+router.post("/", imageFile.array("profilePhoto",1), userProfileStore);
+router.put("/:id",imageFile.array("profilePhoto",1), userProfileUpdate);
 router.delete("/:id", userProfileDelete);
 
 

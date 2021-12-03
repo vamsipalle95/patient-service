@@ -3,9 +3,9 @@ import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
-import { createRequire } from 'module';
+import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-require('dotenv').config()
+require("dotenv").config();
 
 var mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
@@ -61,23 +61,23 @@ const healthRecordStore = [
 	body("height").isLength({ min: 1 }).trim().withMessage("Height name must be specified."),
 	body("weight").isLength({ min: 1 }).trim().withMessage("Weight name must be specified."),
 	body("bloodGroup")
-	.custom((value, { req }) => {
-		return HealthRecord.findOne({ bloodGroup: value, _accountId: req.user._id, _id: { "$ne": req.params.id } }).then(healthRecord => {
-			if (healthRecord) {
-				return Promise.reject("HealthRecord already exist with this Height & Weight");
-			}
-		});
-	}),
+		.custom((value, { req }) => {
+			return HealthRecord.findOne({ bloodGroup: value, _accountId: req.user._id, _id: { "$ne": req.params.id } }).then(healthRecord => {
+				if (healthRecord) {
+					return Promise.reject("HealthRecord already exist with this Height & Weight");
+				}
+			});
+		}),
 	body("genderCd").isLength({ min: 1 }).trim().withMessage("Weight name must be specified."),
 	body("age").isLength({ min: 1 }).trim().withMessage("Weight name must be specified.")
-	.isNumeric().withMessage("Invalid Mobile Number."),
+		.isNumeric().withMessage("Invalid Mobile Number."),
 		
-		sanitizeBody("height").escape(),
-		sanitizeBody("weight").escape(),
-		sanitizeBody("bloodGroup").escape(),
-		sanitizeBody("genderCd").escape(),
-		sanitizeBody("age").escape(),
-		sanitizeBody("*").escape(),
+	sanitizeBody("height").escape(),
+	sanitizeBody("weight").escape(),
+	sanitizeBody("bloodGroup").escape(),
+	sanitizeBody("genderCd").escape(),
+	sanitizeBody("age").escape(),
+	sanitizeBody("*").escape(),
 	(req, res) => {
 		try {
 			const errors = validationResult(req);
@@ -213,7 +213,7 @@ const healthRecordUpdate = [
 				}
 			}
 		} catch (err) {
-			console.log(err.message)
+			console.log(err.message);
 			//throw error in json response with status 500. 
 			return ErrorResponse(res, err);
 		}
@@ -261,4 +261,4 @@ const healthRecordDelete = [
 ];
 
 
-export  { healthRecordStore, healthRecordList,healthRecordDetail,healthRecordUpdate,healthRecordDelete}
+export  { healthRecordStore, healthRecordList,healthRecordDetail,healthRecordUpdate,healthRecordDelete};

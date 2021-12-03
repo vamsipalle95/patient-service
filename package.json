@@ -6,13 +6,13 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon --exec babel-node ./bin/www",
-    "test": "jest",
-    "test-w": "jest --watchAll",
-    "lint": "eslint --fix --config .eslintrc.json \"**/*.js\""
-
+    "test": "npm run eslint && jest",
+    "test-watch": "npm run eslint && jest --watchAll",
+    "eslint": "eslint --fix --config .eslintrc.cjs \"**/*.js\""
   },
-   "dependencies": {
+  "dependencies": {
     "@babel/runtime": "^7.16.3",
+    "babel-node": "0.0.1-security",
     "codacy-coverage": "^3.4.0",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
@@ -30,7 +30,6 @@
     "morgan": "~1.9.0",
     "multer": "^1.4.3",
     "nodemailer": "^6.3.1",
-    "supertest": "^6.1.6",
     "validator": "^13.7.0"
   },
   "devDependencies": {
@@ -39,12 +38,15 @@
     "@babel/node": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
-    "eslint": "^6.5.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "^6.8.0",
     "jest": "^27.4.0",
     "mocha": "^6.2.2",
     "nodemon": "^1.19.4",
-    "nyc": "^14.1.1"
+    "nyc": "^14.1.1",
+    "supertest": "^6.1.6"
   }
 }

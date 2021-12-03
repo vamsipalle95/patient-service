@@ -4,9 +4,9 @@ import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
-import { createRequire } from 'module';
+import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-require('dotenv').config()
+require("dotenv").config();
 
 var mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
@@ -36,7 +36,7 @@ const currentMedicationList = [
 			CurrentMedication.find({ _accountId: req.user._id }).then((currentMedication) => {
 				console.log(currentMedication);
 				if (currentMedication.length > 0) {
-					return successResponseWithData(res, "Operation Success", currentMedication)
+					return successResponseWithData(res, "Operation Success", currentMedication);
 				} else {
 					return successResponseWithData(res, "Operation Success", []);
 
@@ -44,7 +44,7 @@ const currentMedicationList = [
 			});
 		}
 		catch (err) {
-			return ErrorResponse(res, err)
+			return ErrorResponse(res, err);
 		}
 	}
 ];
@@ -97,7 +97,7 @@ const currentMedicationDetails = [
 	auth,
 	function (req, res) {
 		if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-			return successResponseWithData(res, "Operation success", {})
+			return successResponseWithData(res, "Operation success", {});
 		}
 		try {
 			CurrentMedication.findOne({ _id: req.params.id, _accountId: req.user._id }, "_id _accountId _patientId medication createdAt").then((CurrentMedication) => {
@@ -114,7 +114,7 @@ const currentMedicationDetails = [
 			return ErrorResponse(err, res);
 		}
 	}
-]
+];
 
 
 /**
@@ -195,21 +195,21 @@ const currentMedicationDelete = [
 		try {
 			CurrentMedication.findById(req.params.id, function (err, fondCurrentMedication) {
 				if (fondCurrentMedication == null) {
-					return notFoundResponse(res, "UserProfile are not exits and found")
+					return notFoundResponse(res, "UserProfile are not exits and found");
 				}
 				else {
 					//Check authorized user
 					if (fondCurrentMedication._accountId.toString() !== req.user._id) {
-						return unauthorizedResponse(res, "you are not Authorize to do this operation")
+						return unauthorizedResponse(res, "you are not Authorize to do this operation");
 					}
 					else {
 						//delete userProfile.
 						CurrentMedication.findByIdAndRemove(req.params.id, function (err) {
 							if (err) {
-								return ErrorResponse(res, err)
+								return ErrorResponse(res, err);
 							}
 							else {
-								return successResponse(res, "CurrentMedication Delete SuccesFull")
+								return successResponse(res, "CurrentMedication Delete SuccesFull");
 							}
 						});
 					}
@@ -221,7 +221,7 @@ const currentMedicationDelete = [
 			return ErrorResponse(req, res);
 		}
 	}
-]
+];
 
 
-export {currentMedicationList,currentMedicationStore,currentMedicationDetails,currentMedicationUpdate,currentMedicationDelete}
+export {currentMedicationList,currentMedicationStore,currentMedicationDetails,currentMedicationUpdate,currentMedicationDelete};

@@ -6,12 +6,12 @@ import  {insuranceDetailSotre,insuranceDetailUpdate,insuranceDetailList,insuranc
 
 var router = express.Router();
 
-router.post("/", imageFile.array('insuranceImage', 10), insuranceDetailSotre);
+router.post("/", imageFile.array("insuranceImage", 10), insuranceDetailSotre);
 router.get("/", insuranceDetailList);
 router.get("/:id", insuranceDetails);
-router.put("/:id",imageFile.array('insuranceImage', 10), insuranceDetailUpdate);
+router.put("/:id",imageFile.array("insuranceImage", 10), insuranceDetailUpdate);
 router.delete("/:id", insuranceDetailDelete);
 
 
-export default router
+export default router;
 

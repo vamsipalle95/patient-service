@@ -8,4 +8,4 @@ const authenticate = jwt({
 });
 
 
-export default authenticate
+export default authenticate;

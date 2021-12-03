@@ -51,4 +51,4 @@ const unauthorizedResponse = function (res, msg) {
 
 
 
-export { unauthorizedResponse,validationErrorWithData,notFoundResponse,ErrorResponse,successResponseWithData,successResponse}
+export { unauthorizedResponse,validationErrorWithData,notFoundResponse,ErrorResponse,successResponseWithData,successResponse};

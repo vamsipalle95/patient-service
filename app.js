@@ -1,13 +1,13 @@
 
-import  express  from 'express';
+import  express  from "express";
 
-import { createRequire } from 'module';
+import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
 
 import {notFoundResponse,unauthorizedResponse}  from "./helpers/apiResponse.js";
 
-import path  from 'path';
+
 import cookieParser from"cookie-parser";
 import logger from "morgan";
 require("dotenv").config();
@@ -18,8 +18,8 @@ import cors from"cors";
 
 // DB connection
 var MONGODB_URL = process.env.MONGODB_URL;
-console.log("Ramesh")
-console.log(MONGODB_URL)
+console.log("Ramesh");
+console.log(MONGODB_URL);
 var mongoose = require("mongoose");
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	//don't show the log when it is test
@@ -33,7 +33,7 @@ mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true 
 		console.error("App starting error:", err.message);
 		process.exit(1);
 	});
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
 var app = express();
 
@@ -47,7 +47,7 @@ app.use(cookieParser());
 
 // app.use(express.static(path.join(__dirname, "public")));
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 //To allow cross-origin requests
 app.use(cors());
 
@@ -66,10 +66,10 @@ app.use((err, req, res) => {
 	}
 });
 
-const letter=['selectType','apple'];
+const letter=["selectType","apple"];
 console.log(letter);
 
-export default app
+export default app;
 
 
 // login routes

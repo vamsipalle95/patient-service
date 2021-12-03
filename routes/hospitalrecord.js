@@ -7,11 +7,11 @@ import {hospitalRecordStore,hospitalRecordList,hospitalDetails,hospitalUpdate,ho
 
 var router = express.Router();
 
-router.post("/", imageFile.array('hospitalDocument', 10), hospitalRecordStore);
+router.post("/", imageFile.array("hospitalDocument", 10), hospitalRecordStore);
 router.get("/", hospitalRecordList);
 router.get("/:id", hospitalDetails);
-router.put("/:id",imageFile.array('hospitalDocument', 10), hospitalUpdate);
+router.put("/:id",imageFile.array("hospitalDocument", 10), hospitalUpdate);
 router.delete("/:id", hospitalRecordDelete);
 
 
-export default router
+export default router;

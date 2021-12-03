@@ -1,10 +1,10 @@
 import AccountModel  from "../models/AccountModel.js";
 import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
-import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
-import { createRequire } from 'module';
+import {successResponseWithData,ErrorResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
+import { createRequire } from "module";
 const require = createRequire(import.meta.url);
-require('dotenv').config()
+require("dotenv").config();
 
 var mongoose = require("mongoose");
 mongoose.set("useFindAndModify", false);
@@ -31,7 +31,7 @@ const register = [
 		.isAlphanumeric().withMessage("Last name has non-alphanumeric characters."),
 	body("mobileNumber").isLength({ min: 10 }).trim().withMessage("Mobile Number must be specified 10 digits.")
 		.isNumeric().withMessage("Invalid Mobile Number.")
-		.custom((value, { req }) => {
+		.custom((value) => {
 			return AccountModel.findOne({ mobileNumber: value}).then(accountModel => {
 				if (accountModel) {
 					return Promise.reject("This Number has already exits please try to different number");
@@ -53,9 +53,9 @@ const register = [
 
 
 	// Process request after validation and sanitization.
-	async (req, res) => {
+	 (req,res) => {
 		try {
-			// const { mobileNumber } = req.body
+		
 
 			// Extract the validation errors from a request.
 			const errors = validationResult(req);
@@ -71,13 +71,7 @@ const register = [
 					}
 				);
 
-				// const existingUser = await AccountModel.findOne({ mobileNumber });
-
-				// if (existingUser) {
-				//   return apiResponse.validationErrorWithData(res,"This Number has already exits please try to different number",errors.array());
-				// // }
-				// else{
-				// // Create Account.
+				
 				account.save(function (err) {
 					if (err) {
 						return ErrorResponse(res, err);
@@ -101,9 +95,9 @@ const register = [
 							_accountId: account._id,
 						});
 
-					userProfile.save(function (errUserProfile) {
-						if (errUserProfile) {
-							return ErrorResponse(resUserProfile, errUserProfile);
+					userProfile.save(function (err) {
+						if (err) {
+							return ErrorResponse(res, err);
 						}
 						let userProfileData = {
 							_id: userProfile._id,
@@ -122,7 +116,7 @@ const register = [
 
 			}
 		} catch (err) {
-			console.log(err.message)
+			console.log(err.message);
 			//throw error in json response with status 500.
 			return ErrorResponse(res, err);
 		}
@@ -145,7 +139,7 @@ const login = [
 	sanitizeBody("mobileNumber").escape(),
 	sanitizeBody("age").escape(),
 
-	(req, res) => {
+	(req,res) => {
 		try {
 			const errors = validationResult(req);
 			if (!errors.isEmpty()) {
@@ -184,4 +178,4 @@ const login = [
 	}];
 
 
-	export  {register, login}
+export  {register, login};

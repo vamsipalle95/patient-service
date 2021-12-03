@@ -8,10 +8,10 @@ import {vaccineDetailStore,vaccineDetailUpdate,vaccineDetails,vaccineDetailList,
 
 var router = express.Router();
 
-router.post("/", imageFile.array('vaccineDocument', 10), vaccineDetailStore);
+router.post("/", imageFile.array("vaccineDocument", 10), vaccineDetailStore);
 router.get("/", vaccineDetailList);
 router.get("/:id", vaccineDetails);
-router.put("/:id", imageFile.array('vaccineDocument', 10), vaccineDetailUpdate);
+router.put("/:id", imageFile.array("vaccineDocument", 10), vaccineDetailUpdate);
 router.delete("/:id", vaccineDetailDelete);
 
-export default router
+export default router;
