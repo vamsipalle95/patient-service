@@ -2,6 +2,7 @@
 import VaccineDetail from "../models/VaccineDetailModel.js";
 import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
+import {check} from "express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
 import { createRequire } from "module";
@@ -38,6 +39,7 @@ function VaccineDetailData(data) {
  */
 
 
+
 const vaccineDetailStore = [
 	auth,
 	body("vaccineDocument"),
@@ -45,7 +47,7 @@ const vaccineDetailStore = [
 		.isAlphanumeric().withMessage("vaccineName should be isAlphanumeric."),
 	body("doseNumber").isLength({ min: 0 }).trim().withMessage("doseNumber must be Specified")
 		.isNumeric().withMessage("doseNumber must be Specified"),
-	body("date").isLength({ min: 1 }).trim().withMessage("date must be Specified"),
+	check("date").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("place").isLength({ min: 1 }).trim().withMessage("place must be Specified")
 		.isAlphanumeric().withMessage("place should be isAlphanumeric."),
 	body("beneficiaryId").isLength({ min: 1 }).trim().withMessage("beneficiaryId must be Specified")
@@ -57,7 +59,7 @@ const vaccineDetailStore = [
 				}
 			});
 		}),
-	body("nextDueDate").isLength({ min: 1 }).trim().withMessage("nextDueDate must be Specified"),
+		check("nextDueDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	
 	sanitizeBody("vaccineDocument").escape(),
 	sanitizeBody("vaccineName").escape(),
@@ -127,12 +129,13 @@ const vaccineDetailUpdate = [
 		.isAlphanumeric().withMessage("vaccineName should be isAlphanumeric."),
 	body("doseNumber").isLength({ min: 0 }).trim().withMessage("doseNumber must be Specified")
 		.isNumeric().withMessage("doseNumber must be Specified"),
-	body("date").isLength({ min: 1 }).trim().withMessage("date must be Specified"),
+	check("date").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("place").isLength({ min: 1 }).trim().withMessage("place must be Specified")
 		.isAlphanumeric().withMessage("place should be isAlphanumeric."),
 	body("beneficiaryId").isLength({ min: 1 }).trim().withMessage("beneficiaryId must be Specified")
 		.isAlphanumeric().withMessage("beneficiaryId should be isAlphanumeric."),
-	body("nextDueDate").isLength({ min: 1 }).trim().withMessage("nextDueDate must be Specified"),
+	check("nextDueDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
+	
 	sanitizeBody("vaccineDocument").escape(),
 	sanitizeBody("vaccineName").escape(),
 	sanitizeBody("doseNumber").escape(),

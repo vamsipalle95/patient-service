@@ -2,6 +2,7 @@
 import HospitalRecord from "../models/HospitalRecordModel.js";
 import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
+import {check} from "express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
 import { createRequire } from "module";
@@ -38,7 +39,7 @@ const hospitalRecordStore = [
 	auth,
 
 	body("hospitalDocument"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified"),
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("hospitalRecord").isLength({ min: 1 }).trim().withMessage("hospitalRecord must be Specified")
 		.isAlphanumeric().withMessage("hospitalRecord must be Specified.")
 		.custom((value, { req }) => {
@@ -183,7 +184,7 @@ const hospitalDetails = [
 const hospitalUpdate = [
 	auth,
 	body("hospitalDocument"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified"),
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("hospitalRecord").isLength({ min: 1 }).trim().withMessage("hospitalRecord must be Specified")
 		.isAlphanumeric().withMessage("hospitalRecord must be Specified."),
 	body("doctorName").isLength({ min: 1 }).trim().withMessage("doctorName must be Specified"),

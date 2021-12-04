@@ -3,6 +3,7 @@
 import TestReport from "../models/TestReportModel.js";
 import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
+import {check} from "express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
 import { createRequire } from "module";
@@ -36,7 +37,7 @@ function TestReportData(data) {
 const testReortStore = [
 	auth,
 	body("document"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified")
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate")
 		.custom((value, { req }) => {
 			return TestReport.findOne({ recordDate: value, _accountId: req.user._id, _id: { "$ne": req.params.id } }).then(testReport => {
 				if (testReport) {
@@ -182,7 +183,7 @@ const testReportDetails = [
 const testReportUpdate = [
 	auth,
 	body("document"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified"),
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("testName").isLength({ mn: 1 }).trim().withMessage("testName must be Specified"),
 	body("recordDoctor").isLength({ mn: 1 }).trim().withMessage("recordDoctor must be Specified"),
 	body("additionalNote").isLength({ mn: 1 }).trim().withMessage("additionalNote must be Specified"),

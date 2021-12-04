@@ -2,6 +2,7 @@
 import Prescription from "../models/PrescriptionModel.js";
 import { body, validationResult } from "express-validator";
 import { sanitizeBody } from"express-validator";
+import {check} from "express-validator";
 import auth from "../middlewares/jwt.js";
 import {successResponse,successResponseWithData,ErrorResponse,notFoundResponse,validationErrorWithData,unauthorizedResponse}  from "../helpers/apiResponse.js";
 import { createRequire } from "module";
@@ -39,7 +40,7 @@ function PrescriptionData(data) {
 const prescriptionStore = [
 	auth,
 	body("prescriptionDocument"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified")
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate")
 		.custom((value, { req }) => {
 			return Prescription.findOne({ recordDate: value, _accountId: req.user._id }).then(prescription => {
 				if (prescription) {
@@ -64,6 +65,7 @@ const prescriptionStore = [
 
 
 		try {
+			
 			let imagesArray = [];
 			if (req.files == 0 || req.files==2 ) {
 				return validationErrorWithData(res, "Atlest One File Required", "Validation Error");
@@ -175,7 +177,7 @@ const prescriptionDetails = [
 const prescriptionUpdate = [
 	auth,
 	body("prescriptionDocument"),
-	body("recordDate").isLength({ min: 1 }).trim().withMessage("recordDate must be Specified"),
+	check("recordDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	body("recordName").isLength({ min: 1 }).trim().withMessage("recordName must be Specified")
 		.isAlphanumeric().withMessage("RecordName has non-alphanumeric characters."),
 	body("recordPrescribedByDr").isLength({ min: 1 }).trim().withMessage("recordPrescribedByDr must be Specified"),
