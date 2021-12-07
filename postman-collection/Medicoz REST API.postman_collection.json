@@ -52,12 +52,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/auth/register?=",
+							"raw": "http://localhost:5050/api/auth/register?=",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"auth",
@@ -101,12 +101,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/auth/login",
+							"raw": "http://localhost:5050/api/auth/login",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"auth",
@@ -184,12 +184,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile",
+							"raw": "http://localhost:5050/api/userprofile",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"userprofile"
@@ -210,12 +210,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile",
+							"raw": "http://localhost:5050/api/userprofile",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"userprofile"
@@ -236,12 +236,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile/5d43d14a246036209713e667",
+							"raw": "http://localhost:5050/api/userprofile/5d43d14a246036209713e667",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"userprofile",
@@ -314,12 +314,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile/5d43d753cdbdd1264291806c",
+							"raw": "http://localhost:5050/api/userprofile/5d43d753cdbdd1264291806c",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"userprofile",
@@ -341,12 +341,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile/5d43d753cdbdd1264291806c",
+							"raw": "http://localhost:5050/api/userprofile/5d43d753cdbdd1264291806c",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"userprofile",
@@ -409,12 +409,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/healthRecord",
+							"raw": "http://localhost:5050/api/healthRecord",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"healthRecord"
@@ -435,12 +435,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/healthRecord",
+							"raw": "http://localhost:5050/api/healthRecord",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"healthRecord"
@@ -461,12 +461,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/userprofile/616d01563d779030a4450fcd",
+							"raw": "http://localhost:5050/api/userprofile/616d01563d779030a4450fcd",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"healthrecord",
@@ -524,12 +524,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/healthrecord/616d01563d779030a4450fcd",
+							"raw": "http://localhost:5050/api/healthrecord/616d01563d779030a4450fcd",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"healthrecord",
@@ -551,12 +551,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/healthrecord/616d3c64a602900c60e1a263",
+							"raw": "http://localhost:5050/api/healthrecord/616d3c64a602900c60e1a263",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"healthrecord",
@@ -575,7 +575,7 @@
 				{
 					"name": "CurrentMedication List",
 					"request": {
-						"url": "http://localhost:3000/api/currentmedication",
+						"url": "http://localhost:5050/api/currentmedication",
 						"method": "GET",
 						"header": [
 							{
@@ -595,7 +595,7 @@
 				{
 					"name": "CurrentMedication Detail",
 					"request": {
-						"url": "http://localhost:3000/api/currentmedication/5d43d14a246036209713e667",
+						"url": "http://localhost:5050/api/currentmedication/5d43d14a246036209713e667",
 						"method": "GET",
 						"header": [
 							{
@@ -615,7 +615,7 @@
 				{
 					"name": "CurrentMedication Update",
 					"request": {
-						"url": "http://localhost:3000/api/currentmedication/616fabd622d8280c8c3a51e3",
+						"url": "http://localhost:5050/api/currentmedication/616fabd622d8280c8c3a51e3",
 						"method": "PUT",
 						"header": [
 							{
@@ -640,7 +640,7 @@
 				{
 					"name": "CurrentMedication Delete",
 					"request": {
-						"url": "http://localhost:3000/api/currentmedication/5d43d753cdbdd1264291806c",
+						"url": "http://localhost:5050/api/currentmedication/5d43d753cdbdd1264291806c",
 						"method": "DELETE",
 						"header": [
 							{
@@ -660,7 +660,7 @@
 				{
 					"name": "CurrentMedication Save",
 					"request": {
-						"url": "http://localhost:3000/api/currentmedication",
+						"url": "http://localhost:5050/api/currentmedication",
 						"method": "POST",
 						"header": [
 							{
@@ -735,12 +735,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/prescription",
+							"raw": "http://localhost:5050/api/prescription",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"prescription"
@@ -761,12 +761,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/prescription",
+							"raw": "http://localhost:5050/api/prescription",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"prescription"
@@ -778,7 +778,7 @@
 				{
 					"name": "Prescription Detail",
 					"request": {
-						"url": "http://localhost:3000/api/prescription/5d43d14a246036209713e667",
+						"url": "http://localhost:5050/api/prescription/5d43d14a246036209713e667",
 						"method": "GET",
 						"header": [
 							{
@@ -843,12 +843,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/prescription/61712aa570c8e50d10837e52",
+							"raw": "http://localhost:5050/api/prescription/61712aa570c8e50d10837e52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"prescription",
@@ -870,12 +870,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/prescription/617131fd63e1603328416084",
+							"raw": "http://localhost:5050/api/prescription/617131fd63e1603328416084",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"prescription",
@@ -938,12 +938,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/testreport",
+							"raw": "http://localhost:5050/api/testreport",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"testreport"
@@ -964,12 +964,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/testreport",
+							"raw": "http://localhost:5050/api/testreport",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"testreport"
@@ -990,12 +990,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/testReport/617657f8f56fa33f34149856",
+							"raw": "http://localhost:5050/api/testReport/617657f8f56fa33f34149856",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"testreport"
@@ -1052,12 +1052,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/testreport/61712aa570c8e50d10837e52",
+							"raw": "http://localhost:5050/api/testreport/61712aa570c8e50d10837e52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"testreport",
@@ -1079,12 +1079,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/testreport/617131fd63e1603328416084",
+							"raw": "http://localhost:5050/api/testreport/617131fd63e1603328416084",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"testreport",
@@ -1147,12 +1147,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/hospitalrecord",
+							"raw": "http://localhost:5050/api/hospitalrecord",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"hospitalrecord"
@@ -1173,12 +1173,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/hospitalrecord",
+							"raw": "http://localhost:5050/api/hospitalrecord",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"hospitalrecord"
@@ -1199,12 +1199,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/hospitalrecord/617657f8f56fa33f34149856",
+							"raw": "http://localhost:5050/api/hospitalrecord/617657f8f56fa33f34149856",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"hospitalrecord",
@@ -1262,12 +1262,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/hospitalrecord/61712aa570c8e50d10837e52",
+							"raw": "http://localhost:5050/api/hospitalrecord/61712aa570c8e50d10837e52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"hospitalrecord",
@@ -1289,12 +1289,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/hospitalrecord/617131fd63e1603328416084",
+							"raw": "http://localhost:5050/api/hospitalrecord/617131fd63e1603328416084",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"hospitalrecord",
@@ -1387,12 +1387,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/insurancedetail",
+							"raw": "http://localhost:5050/api/insurancedetail",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"insurancedetail"
@@ -1479,12 +1479,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/insurancedetail/61712aa570c8e50d10837e52",
+							"raw": "http://localhost:5050/api/insurancedetail/61712aa570c8e50d10837e52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"insurancedetail",
@@ -1506,12 +1506,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/api/insurancedetail",
+							"raw": "http://localhost:5050/api/insurancedetail",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"insurancedetail"
@@ -1533,12 +1533,12 @@
 								}
 							],
 							"url": {
-								"raw": "http://localhost:3000/api/insurancedetail/617657f8f56fa33f34149856",
+								"raw": "http://localhost:5050/api/insurancedetail/617657f8f56fa33f34149856",
 								"protocol": "http",
 								"host": [
 									"localhost"
 								],
-								"port": "3000",
+								"port": "5050",
 								"path": [
 									"api",
 									"insurancedetail",
@@ -1560,12 +1560,12 @@
 								}
 							],
 							"url": {
-								"raw": "http://localhost:3000/api/insurancedetail/617131fd63e1603328416084",
+								"raw": "http://localhost:5050/api/insurancedetail/617131fd63e1603328416084",
 								"protocol": "http",
 								"host": [
 									"localhost"
 								],
-								"port": "3000",
+								"port": "5050",
 								"path": [
 									"api",
 									"insurancedetail",
@@ -1639,12 +1639,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/vaccinedetail",
+							"raw": "http://localhost:5050/api/vaccinedetail",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"vaccinedetail"
@@ -1711,12 +1711,12 @@
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/vaccinedetail/61712aa570c8e50d10837e52",
+							"raw": "http://localhost:5050/api/vaccinedetail/61712aa570c8e50d10837e52",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3000",
+							"port": "5050",
 							"path": [
 								"api",
 								"vaccinedetail",
@@ -1738,12 +1738,12 @@
 								}
 							],
 							"url": {
-								"raw": "http://localhost:3000/api/vaccinedetail/617657f8f56fa33f34149856",
+								"raw": "http://localhost:5050/api/vaccinedetail/617657f8f56fa33f34149856",
 								"protocol": "http",
 								"host": [
 									"localhost"
 								],
-								"port": "3000",
+								"port": "5050",
 								"path": [
 									"api",
 									"vaccinedetail",
@@ -1765,12 +1765,12 @@
 								}
 							],
 							"url": {
-								"raw": "http://localhost:3000/api/vaccinedetail",
+								"raw": "http://localhost:5050/api/vaccinedetail",
 								"protocol": "http",
 								"host": [
 									"localhost"
 								],
-								"port": "3000",
+								"port": "5050",
 								"path": [
 									"api",
 									"vaccinedetail"
@@ -1792,12 +1792,12 @@
 								}
 							],
 							"url": {
-								"raw": "http://localhost:3000/api/vaccinedetail/617131fd63e1603328416084",
+								"raw": "http://localhost:5050/api/vaccinedetail/617131fd63e1603328416084",
 								"protocol": "http",
 								"host": [
 									"localhost"
 								],
-								"port": "3000",
+								"port": "5050",
 								"path": [
 									"api",
 									"vaccinedetail",
