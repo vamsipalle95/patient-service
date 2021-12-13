@@ -1,6 +1,7 @@
 
 import  express  from "express";
-
+import dotenv from "dotenv";
+dotenv.config();
 import { createRequire } from "module";
 
 const require = createRequire(import.meta.url);
@@ -18,15 +19,15 @@ import cors from"cors";
 
 // DB connection
 var MONGODB_URL = process.env.MONGODB_URL;
-console.log("Ramesh");
-console.log(MONGODB_URL);
+// console.log("Ramesh");
+// console.log(MONGODB_URL);
 var mongoose = require("mongoose");
 mongoose.connect(MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
 	//don't show the log when it is test
 	if(process.env.NODE_ENV !== "test") {
 		console.log("Connected to %s", MONGODB_URL);
-		console.log("App is running ... \n");
-		console.log("Press CTRL + C to stop the process. \n");
+		console.log(`App running on port ${process.env.PORT}`);
+		// console.log("Press CTRL + C to stop the process. \n");
 	}
 })
 	.catch(err => {
@@ -66,8 +67,8 @@ app.use((err, req, res) => {
 	}
 });
 
-const letter=["selectType","apple"];
-console.log(letter);
+// const letter=["selectType","apple"];
+// console.log(letter);
 
 export default app;
 

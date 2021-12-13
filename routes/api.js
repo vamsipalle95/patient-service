@@ -1,7 +1,7 @@
 import express from "express";
 import authRouter from "./auth.js";
 
-import userProfileRouter from"./userProfile.js";
+// import userProfileRouter from"./userProfile.js";
 import healthRecordRouter from "./healthrecord.js";
 import currentMedicationRouter from"./currentmedication.js";
 
@@ -14,7 +14,7 @@ import vaccineDetailRouter from"./vaccinedetail.js";
 var app = express();
 
 app.use("/auth/", authRouter);
-app.use("/userprofile/", userProfileRouter);
+// app.use("/userprofile/", userProfileRouter);
 app.use("/healthrecord/", healthRecordRouter);
 app.use("/currentmedication/", currentMedicationRouter);
 

@@ -59,7 +59,7 @@ const vaccineDetailStore = [
 				}
 			});
 		}),
-		check("nextDueDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
+	check("nextDueDate").isLength({ min: 1 }).isISO8601().toDate().trim().withMessage("recordDate must be Specified with correct formate"),
 	
 	sanitizeBody("vaccineDocument").escape(),
 	sanitizeBody("vaccineName").escape(),
